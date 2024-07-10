@@ -19,6 +19,7 @@ import { ContactLinks } from './globals/ContactLinks'
 import { Textlinks } from './globals/TextLinks'
 import { Sliders } from './collections/Sliders'
 import { Items } from './collections/Items'
+import { Categories } from './collections/Categories'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -28,7 +29,7 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  collections: [Users, Pages, Products, Media, Icons, Sliders, Items],
+  collections: [Users, Pages, Products, Media, Icons, Sliders, Items, Categories],
   globals: [Header, Copyright, Textlinks, ContactLinks],
   editor: lexicalEditor({}),
   // plugins: [payloadCloud()], // TODO: Re-enable when cloud supports 3.0
