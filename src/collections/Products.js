@@ -1,8 +1,3 @@
-import { TwoColumn } from '../blocks/TwoColumn'
-import { Hero } from '../blocks/Hero'
-import { TitleDescription } from '../blocks/TitleDescription'
-// import { SimpleRichText } from "../blocks/SimpleRichText";
-
 export const Products = {
   slug: 'products',
   labels: {
@@ -12,6 +7,9 @@ export const Products = {
   access: {
     read: () => true,
   },
+  admin: {
+    useAsTitle: 'slug',
+  },
   fields: [
     {
       name: 'name',
@@ -20,16 +18,45 @@ export const Products = {
       required: true,
     },
     {
-      name: 'slug',
-      label: 'Slug',
+      name: 'description',
+      label: 'Description',
       type: 'text',
       required: true,
     },
     {
-      name: 'layout',
-      label: 'Layout',
-      type: 'blocks',
-      blocks: [Hero, TwoColumn, TitleDescription],
+      name: 'slug',
+      label: 'Slug',
+      type: 'text',
+      unique: true,
+      index: true,
+      required: true,
+    },
+    {
+      name: 'category',
+      label: 'Category',
+      type: 'relationship',
+      relationTo: 'categories',
+      hasMany: true,
+      // position: 'sidebar',
+      required: true,
+    },
+    {
+      name: 'price',
+      label: 'Price',
+      type: 'number',
+      required: true,
+    },
+    {
+      name: 'media',
+      type: 'array',
+      fields: [
+        {
+          name: 'image',
+          type: 'upload',
+          relationTo: 'media',
+          required: 'true',
+        },
+      ],
     },
   ],
 }

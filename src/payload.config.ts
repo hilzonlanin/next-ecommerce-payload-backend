@@ -11,7 +11,7 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { s3Storage } from '@payloadcms/storage-s3'
 import { Pages } from './collections/Pages'
-import { Products } from './collections/Products'
+import { ProductPages } from './collections/ProductPages'
 import { Header } from './globals/Header'
 import { Copyright } from './globals/Copyright'
 import { Icons } from './collections/Icons'
@@ -20,7 +20,7 @@ import { Textlinks } from './globals/TextLinks'
 import { Sliders } from './collections/Sliders'
 import { Items } from './collections/Items'
 import { Categories } from './collections/Categories'
-import { ItemTest } from './collections/ItemTest'
+import { Products } from './collections/Products'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -30,7 +30,7 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  collections: [Users, Pages, Products, Media, Icons, Sliders, Items, Categories],
+  collections: [Users, Pages, ProductPages, Media, Icons, Sliders, Items, Products, Categories],
   globals: [Header, Copyright, Textlinks, ContactLinks],
   editor: lexicalEditor({}),
   // plugins: [payloadCloud()], // TODO: Re-enable when cloud supports 3.0
