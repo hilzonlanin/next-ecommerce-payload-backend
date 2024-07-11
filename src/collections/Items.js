@@ -32,6 +32,15 @@ export const Items = {
       required: true,
     },
     {
+      name: 'category',
+      label: 'Category',
+      type: 'relationship',
+      relationTo: 'categories',
+      hasMany: true,
+      // position: 'sidebar',
+      required: true,
+    },
+    {
       name: 'price',
       label: 'Price',
       type: 'number',
