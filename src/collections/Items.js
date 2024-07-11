@@ -1,8 +1,3 @@
-// import { TwoColumn } from '../blocks/TwoColumn'
-// import { Hero } from '../blocks/Hero'
-// import { TitleDescription } from '../blocks/TitleDescription'
-// import { SimpleRichText } from "../blocks/SimpleRichText";
-
 export const Items = {
   slug: 'items',
   labels: {
@@ -11,6 +6,9 @@ export const Items = {
   },
   access: {
     read: () => true,
+  },
+  admin: {
+    useAsTitle: 'slug',
   },
   fields: [
     {
@@ -29,6 +27,8 @@ export const Items = {
       name: 'slug',
       label: 'Slug',
       type: 'text',
+      unique: true,
+      index: true,
       required: true,
     },
     {

@@ -20,6 +20,7 @@ import { Textlinks } from './globals/TextLinks'
 import { Sliders } from './collections/Sliders'
 import { Items } from './collections/Items'
 import { Categories } from './collections/Categories'
+import { ItemTest } from './collections/ItemTest'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
